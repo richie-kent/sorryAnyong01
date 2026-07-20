@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Our Story 🌸</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400&family=Poppins:wght@600&family=Gaegu:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styleMain.css">
+
+    <!-- Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
+</head>
+<body>
+
+    <!-- ===========================
+     START OVERLAY
+=========================== -->
+<div id="start-overlay">
+    <div class="overlay-card">
+        <div class="overlay-flower">
+        </div>
+        <h2>For Bao Bao</h2>
+        <p>Tap anywhere to start</p>
+        <small>      turn on volume🎵     </small>
+    </div>
+</div>
+
+    <!-- Floating Decorations -->
+    <div class="floating-elements" id="decorations"></div>
+
+    <main id="scrapbook">
+        <!-- Section 1: Welcome -->
+        <section class="v-section welcome">
+            <div class="sticker-wrap">
+                <span class="sticker s1">✨</span>
+                <span class="sticker s2">💖</span>
+            </div>
+            <h1 class="handwritten">Hi Bao Bao 🌸</h1>
+            <div class="intro-card">
+                <p>I'm so sorry for what happened. I know I hurt you
+                     and I regret it deeply.</p>
+                <p>I made something for you.</p>
+                <p class="small">I hope you'll stay until the end.</p>
+                <button class="btn-cute" onclick="scrollToNext()">Let's Begin</button>
+            </div>
+        </section>
+
+        <!-- Section 2: Photo Album -->
+        <section class="v-section album">
+            <h2 class="sec-title">some of our pictures</h2>
+            <div class="polaroid-stack">
+                <!-- Placeholders: Replace src with your photos -->
+                <div class="polaroid" onclick="openGallery(0)">
+                    <div class="photo-frame">
+                        <img src="anyongSorry_1.jpg" alt="Memory">
+                    </div>
+                    <p class="caption">awal-awal pertama kita mulai sering spend time bareng dirumah.
+                        waktu awal awal kita happyy bangett, malah jadi rutinitas harian, sekali ga jumpa
+                        langsung ngerasa aneh, ya ga awal awal doang sih, buktinya sampe last masi funn.
+                    </p>
+                </div>
+                <div class="polaroid" onclick="openGallery(1)">
+                    <div class="photo-frame">
+                        <img src="anyongSorry_2.jpg" alt="Memory">
+                    </div>
+                    <p class="caption">ni waktu kita last ke gereja, idk why,
+                        but spend time sama u digereja u rasanya funn and tenang, wa suka
+                        wa mau ulang lagi, tapi krn ldr...</p>
+                </div>
+            </div>
+        </section>
+
+                <!-- Section 3: Movie Time -->
+        <section class="v-section movie">
+            <h2 class="sec-title">Movie Time</h2>
+
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <video
+                        id="memoryVideo"
+                        controls
+                        playsinline
+                        preload="metadata"
+                        poster="poster.jpg"
+                    >
+                        <source src="myLifeWithHer.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
+                <p class="video-desc">Our Happy Moments ❤️</p>
+            </div>
+        </section>
+
+        <!-- Section 4: Letter -->
+<section class="v-section letter-section">
+    <div class="letter-header">
+        <span class="letter-date">
+            Written with love ❤️
+        </span>
+        <h2 class="letter-title">
+            A Letter For You
+        </h2>
+        <p class="letter-subtitle">
+            Before you leave this page...
+            I hope you'll read this until the end.
+        </p>
+    </div>
+    <div class="letter-card">
+        <div class="paper-top"></div>
+        <div class="letter-content">
+            <h3>Dear Bao Bao,</h3>
+                <p>sorry ya bao, akhir akhir ini kita bad banget, banyak prob dsb
+                    wa gapernah mean buat kita bad, ik you've been hearing a lot of this shit from me
+                    tapi i really mean it, wa selama ini berusaha untuk ngga buat prob, dengan anxious wa
+                    dengan ovt wa, wa cuma berharap uuu bisa ngertiin ovt dan anxious wa, pengen u reasure, 
+                    tapi mostly malah jadi gaduh, ik u pasti muak and capek liat tingkah wa selama ini, 
+                    belum lagi wa ngomong ginian ulang ulang terus, wa tau kok u juga try disana,
+                    ego wa masi tinggi dan sometimes wa masi sadar itu, kayak yg highlight dsb,
+                    wa kadang arsip kadang buka, wa gada mean buat seolah dimain mainin gitu, cuman kadang mama..
+                 </p>
+
+                 <p>
+                    wa paham kok yang u mean 2 hari lalu, tentang ngadepin wa gimana2, 
+                    u takut capek and muak sama wa kan, maybe wa too much wa mikirnya kalo emang beneran sayang gamungkin stop kan
+                    , tapi... ik u juga manusia, wa juga, kalo mau kita oke, wa harus bisa change, harus bisa better, 
+                    believe me bao, w try, wa always try, kayak semalam, wa gada mean buat say, cuma sesak, wa cuma berharap u bakal comfort, 
+                    ga expect u do kek gitu.. maaf ya, i need to change, pls give me a chance to change 
+                    , wa always try, but sometimes it seems not enough, i promise i'll try harder and better, 
+                    jangan bad lama2 sama wa pls bao, apalagi di ldr ini, kalo kita kasi space, atau ngelakuin hal, wa yakin bakal keulang2 terus,
+                    bisa tolong buka highlightnya ga... maaf bikin u think bad soal itu and semalam, wa promise to try harder untuk nahan sebelum speak up bad2 kek semalam
+                    pls ya bao... there's not much that i can do, but i promise to try harder and better, pls give me a chance to change, i love u bao, pls don't leave me, 
+                    wa mau kita work out... the way we plan it
+                 </p>
+
+            
+            <p><!-- PARAGRAF 1 --></p>
+            <div class="letter-sign">
+                With all my love,
+                <br><br>
+                Kent ❤️
+            </div>
+        </div>
+    </div>
+
+</section>
+    </main>
+
+    <!-- Music Player -->
+    <div class="music-player">
+        <div class="player-info">
+            <img src="locationUnknown.jpeg" alt="Cover" class="album-art">
+            <div class="track-details">
+                <span class="track-name">Our Song</span>
+                <div class="progress-container"><div class="progress-bar"></div></div>
+            </div>
+        </div>
+        <div class="player-controls">
+            <button id="playPause">▶</button>
+        </div>
+    </div>
+
+    <script src="jsMain.js"></script>
+</body>
+</html>
