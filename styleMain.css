@@ -1,0 +1,297 @@
+:root {
+    --bg-main: #FFF7FB;
+    --bg-soft: #FFEAF4;
+    --accent: #FF8DB4;
+    --text: #4A4A4A;
+    --glass: rgba(255, 255, 255, 0.75);
+    --handwritten: 'Gaegu', cursive;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Scrapbook Background */
+#scrapbook {
+    background-image: 
+        radial-gradient(#FFD6E7 1px, transparent 1px),
+        radial-gradient(#FFD6E7 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-position: 0 0, 20px 20px;
+}
+
+.v-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    position: relative;
+}
+
+/* Polaroid Style */
+.polaroid {
+    background: white;
+    padding: 15px 15px 40px 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transform: rotate(-3deg);
+    transition: transform 0.3s ease;
+    max-width: 280px;
+    margin: 20px;
+}
+
+.polaroid:nth-child(even) { transform: rotate(3deg); }
+
+.photo-frame img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.caption {
+    font-family: var(--handwritten);
+    font-size: 1.2rem;
+    text-align: center;
+    margin-top: 15px;
+    color: #777;
+}
+
+/* ===========================
+   Letter Section
+=========================== */
+.letter-section{
+    padding:80px 20px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+.letter-header{
+    text-align:center;
+    margin-bottom:35px;
+}
+.letter-date{
+    color:#ff7aa8;
+    font-size:.9rem;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+.letter-title{
+    font-family:"Cormorant Garamond", serif;
+    font-size:3rem;
+    margin:15px 0 10px;
+    color:#444;
+}
+.letter-subtitle{
+    color:#888;
+    font-size:1rem;
+    max-width:330px;
+    line-height:1.6;
+}
+.letter-card{
+    width:100%;
+    max-width:750px;
+    background:#fffdf9;
+    border-radius:25px;
+    padding:50px;
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.08);
+    position:relative;
+    overflow:hidden;
+}
+.paper-top{
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:10px;
+    background:linear-gradient(
+        90deg,
+        #ffb6d5,
+        #ffd9ea,
+        #ffc0dc
+    );
+}
+.letter-content{
+    font-family:"Cormorant Garamond", serif;
+    color:#444;
+    font-size:1.35rem;
+    line-height:2;
+}
+.letter-content h3{
+    margin-bottom:30px;
+    font-size:2rem;
+    color:#444;
+}
+.letter-content p{
+    margin-bottom:28px;
+}
+.letter-sign{
+    margin-top:60px;
+    text-align:right;
+    font-family:"Gaegu", cursive;
+    font-size:2rem;
+    color:#ff7aa8;
+}
+.letter-card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+    repeating-linear-gradient(
+        transparent,
+        transparent 34px,
+        rgba(0,0,0,.04) 35px
+    );
+    pointer-events:none;
+}
+
+
+/* Floating Elements */
+.floating-elements {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 100;
+}
+
+.particle {
+    position: absolute;
+    opacity: 0.6;
+    animation: float 6s infinite ease-in-out;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(10deg); }
+}
+
+/* Handwritten Font Classes */
+.handwritten { font-family: var(--handwritten); }
+
+/* Cute Button */
+.btn-cute {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-family: var(--handwritten);
+    font-size: 1.4rem;
+    box-shadow: 0 5px 15px rgba(255, 141, 180, 0.4);
+    cursor: pointer;
+}
+
+/* ===========================
+   Movie Section
+=========================== */
+
+.movie{
+    padding:60px 20px;
+}
+.sec-title{
+    font-size:2.2rem;
+    font-weight:700;
+    margin-bottom:30px;
+    color:#444;
+}
+.video-card{
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+.video-wrapper{
+    width:100%;
+    max-width:340px;      /* ukuran video */
+    border-radius:24px;
+    overflow:hidden;
+    background:#000;
+    box-shadow:0 15px 35px rgba(0,0,0,.18);
+}
+#memoryVideo{
+    width:100%;
+    height:auto;
+    display:block;
+    object-fit:contain;
+}
+.video-desc{
+    margin-top:18px;
+    font-size:1rem;
+    color:#777;
+    font-family:var(--handwritten);
+}
+@media(max-width:768px){
+    .letter-card{
+        padding:28px;
+        border-radius:20px;
+    }
+    .letter-title{
+        font-size:2.2rem;
+    }
+    .letter-content{
+        font-size:1.1rem;
+        line-height:1.9;
+    }
+}
+
+/* ===========================
+   START OVERLAY
+=========================== */
+#start-overlay{
+    position:fixed;
+    inset:0;
+    width:100%;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:rgba(255,247,251,.88);
+    backdrop-filter:blur(8px);
+    z-index:99999;
+    cursor:pointer;
+    transition:.8s;
+}
+.overlay-card{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:18px;
+    text-align:center;
+    padding:45px 35px;
+    background:rgba(255,255,255,.75);
+    backdrop-filter:blur(20px);
+    border-radius:30px;
+    box-shadow:
+    0 15px 45px rgba(255,130,180,.18);
+}
+.overlay-flower{
+    font-size:4rem;
+    animation:flowerFloat 2.5s ease-in-out infinite;
+}
+.overlay-card h2{
+    font-size:2rem;
+    color:#ff6ea8;
+    font-family:var(--handwritten);
+}
+.overlay-card p{
+    font-size:1.15rem;
+    color:#555;
+    font-weight:600;
+}
+.overlay-card small{
+    color:#999;
+    font-size:.9rem;
+}
+@keyframes flowerFloat{
+    0%,100%{
+        transform:translateY(0px);
+    }
+    50%{
+        transform:translateY(-10px);
+    }
+}
